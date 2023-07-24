@@ -113,13 +113,10 @@ export default function Home() {
 
   return (
     <div className="loading-spinner-container">
-      <div className="outline-red">
-        <div className="outline-light-blue">
-          <div className="outline-dark-blue">
-            <div className="loading-bmw-spinner"></div>
-          </div>
-        </div>
-      </div>
+      <div className="outline-red"></div>
+      <div className="outline-light-blue"></div>
+      <div className="outline-dark-blue"></div>
+      <div className="loading-bmw-spinner"></div>
     </div>
   )
 }

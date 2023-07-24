@@ -23,73 +23,84 @@ body {
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
-.loading-spinner-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .loading-bmw-spinner {
   border-radius: 50%;
-  /* background-image: url(/_next/static/media/bmw-logo-683.e78095fb.png); */
   background-image: url(bmw-logo-683.png);
   background-position: center;
   background-repeat: no-repeat;
+  background-size: 160px;
   aspect-ratio: 1/1;
-  width: 100%;
-  /* animation: leaves 5s ease-in-out infinite alternate; */
-  /* -webkit-animation: leaves 5s ease-in-out infinite alternate; */
+  width: 160px;
+  animation: spin 3s infinite linear;
+  -webkit-animation: spin 3s infinite linear;
+  -moz-animation: spin 3s infinite linear;
+}
+
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+}
+
+.loading-spinner-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* background: rgba(43, 43, 43, 0.3);
+  opacity: 0;
+  transition: opacity .8s ease-in-out; */
+  /* touch-action: none; */
+}
+
+.outline-red,
+.outline-light-blue,
+.outline-dark-blue {
+  position: absolute;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border: 3px solid transparent;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .outline-red {
-  outline: 20px solid #EE0405;
-  width: 100%;
-  border-radius: 50%;
-  outline-offset: -560px;
-  /* animation: drawBorder 2s ease forwards; */
+  border-color: #545454;
+  width: 220px;
+  height: 220px;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  animation: spin 2s infinite linear;
+  -webkit-animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
 }
 
 .outline-light-blue {
-  outline: 20px solid #4599FE;
-  width: 100%;
-  border-radius: 50%;
-  outline-offset: -600px;
-  /* animation: drawBorder 2s ease forwards; */
+  border-color: #808080;
+  width: 200px;
+  height: 200px;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  animation: spin 1.5s infinite linear;
+  -webkit-animation: spin 1.5s infinite linear;
+  -moz-animation: spin 1.5s infinite linear;
 }
 
 .outline-dark-blue {
-  outline: 20px solid #031E49;
-  width: 100%;
-  border-radius: 50%;
-  outline-offset: -640px;
-  /* animation: drawBorder 2s ease forwards; */
+  border-color: #efece7;
+  width: 180px;
+  height: 180px;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  animation: spin 1s infinite linear;
+  -webkit-animation: spin 1s infinite linear;
+  -moz-animation: spin 1s infinite linear;
 }
-
-@keyframes leaves {
-  0% {
-    transform: scale(1.0);
-    -webkit-transform: scale(1.0);
-  }
-
-  50% {
-    transform: scale(0.5);
-    -webkit-transform: scale(0.5);
-  }
-
-  100% {
-    transform: scale(1.0);
-    -webkit-transform: scale(1.0);
-  }
-}
-
-/* @keyframes drawBorder {
-  from {
-    max-width: 0%;
-  }
-
-  to {
-    max-width: 100%;
-  }
-} */
